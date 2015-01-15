@@ -1,8 +1,8 @@
 # encoding: utf-8
 require 'rubygems' # gem requires
-require 'posix/spawn' # http://rubygems.org/gems/posix-spawn
 require 'nokogiri'
 require 'xmlsimple'
+require 'posix/spawn' # http://rubygems.org/gems/posix-spawn
 
 # ruby requies
 require 'fileutils'
