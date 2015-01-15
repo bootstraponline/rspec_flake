@@ -26,9 +26,12 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'chronic_duration', '~> 0.10.2'
   s.add_runtime_dependency 'posix-spawn', '~> 0.3.9'
+  s.add_runtime_dependency 'xml-simple', '~> 1.1.4'
 
   s.add_development_dependency 'thor', '~> 0.19.1'
   s.add_development_dependency 'appium_thor', '~> 0.0.7'
+  s.add_development_dependency 'pry', '~> 0.10.1'
+  s.add_development_dependency 'awesome_print', '~> 1.6.1'
 
   s.executables = %w(rspec_flake)
   s.files = `git ls-files`.split "\n"
