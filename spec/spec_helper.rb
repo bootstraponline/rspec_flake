@@ -8,6 +8,39 @@ def data data_path
   File.expand_path File.join('..', 'data', data_path), __FILE__
 end
 
+def expected_merge_xml
+  <<'XML'
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite>
+    <testcase failures="0" runs="3" name="a a 1" location="./spec/a_spec.rb:6">
+      <time>0.000177</time>
+      <time>0.000217</time>
+      <time>0.000184</time>
+    </testcase>
+    <testcase failures="0" runs="3" name="a a 2" location="./spec/a_spec.rb:10">
+      <time>0.000198</time>
+      <time>0.00015</time>
+      <time>0.000171</time>
+    </testcase>
+    <testcase failures="0" runs="3" name="b b 3" location="./spec/b_spec.rb:6">
+      <time>0.000112</time>
+      <time>0.000171</time>
+      <time>0.00016</time>
+    </testcase>
+    <testcase failures="0" runs="3" name="b b 4" location="./spec/b_spec.rb:10">
+      <time>0.000204</time>
+      <time>0.000148</time>
+      <time>0.000173</time>
+    </testcase>
+    <testcase failures="1" runs="1" name="a a 3" location="./spec/a_spec.rb:2">
+      <time>0.001008</time>
+    </testcase>
+  </testsuite>
+</testsuites>
+XML
+end
+
 def expected_converted_0_xml
   <<'XML'
 <?xml version="1.0" encoding="UTF-8"?>
