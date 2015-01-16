@@ -32,7 +32,7 @@ module RSpecFlake
 
             if testcase_obj[:failure]
               test[:failures] += 1
-              test[:failure] ||= []
+              test[:failure]  ||= []
               test[:failure] << { 'content' => cdata(testcase_obj[:failure][:content]) }
             end
             test[:runs] += 1

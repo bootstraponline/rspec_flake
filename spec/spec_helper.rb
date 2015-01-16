@@ -167,44 +167,44 @@ def expected_parsed_0_xml
 end
 
 def expected_parsed_failure_xml
-{
+  {
     :testsuites => {
-            :attrs => {
-               "errors" => "0",
-             "failures" => "1",
-              "skipped" => "0",
-                "tests" => "1",
-                 "time" => "0.001672",
-            "timestamp" => "2015-01-16T10:14:25-05:00"
-        },
-        :testsuite => {
-            "./spec/a_spec.rb:1" => {
-                   :attrs => {
-                    "location" => "./spec/a_spec.rb:1",
-                        "name" => "a",
-                       "tests" => "1",
-                      "errors" => "0",
-                    "failures" => "1",
-                     "skipped" => "0"
+      :attrs     => {
+        "errors"    => "0",
+        "failures"  => "1",
+        "skipped"   => "0",
+        "tests"     => "1",
+        "time"      => "0.001672",
+        "timestamp" => "2015-01-16T10:14:25-05:00"
+      },
+      :testsuite => {
+        "./spec/a_spec.rb:1" => {
+          :attrs    => {
+            "location" => "./spec/a_spec.rb:1",
+            "name"     => "a",
+            "tests"    => "1",
+            "errors"   => "0",
+            "failures" => "1",
+            "skipped"  => "0"
+          },
+          :testcase => {
+            "./spec/a_spec.rb:2" => {
+              :attrs   => {
+                "name"     => "a a 3",
+                "time"     => "0.001008",
+                "location" => "./spec/a_spec.rb:2"
+              },
+              :failure => {
+                :attrs   => {
+                  "message" => "failed a a 3",
+                  "type"    => "failed"
                 },
-                :testcase => {
-                    "./spec/a_spec.rb:2" => {
-                          :attrs => {
-                                "name" => "a a 3",
-                                "time" => "0.001008",
-                            "location" => "./spec/a_spec.rb:2"
-                        },
-                        :failure => {
-                              :attrs => {
-                                "message" => "failed a a 3",
-                                   "type" => "failed"
-                            },
-                            :content => "\nexpected: 2\n     got: 1\n\n(compared using ==)\n\n[\"./spec/a_spec.rb:4:in `block (2 levels) in <top (required)>'\"]"
-                        }
-                    }
-                }
+                :content => "\nexpected: 2\n     got: 1\n\n(compared using ==)\n\n[\"./spec/a_spec.rb:4:in `block (2 levels) in <top (required)>'\"]"
+              }
             }
+          }
         }
+      }
     }
-}
+  }
 end

@@ -15,10 +15,10 @@ module RSpecFlake
       end
 
       def reset
-        @data           = {}
-        @suite_location = nil
+        @data              = {}
+        @suite_location    = nil
         @testcase_location = nil
-        @failure = nil
+        @failure           = nil
       end
 
       def result
@@ -40,11 +40,11 @@ module RSpecFlake
             @data[root][testsuite][@suite_location] ||= { attrs: attrs, testcase: {} }
           when :testcase
             raise 'testcase not part of a suite' unless @suite_location
-            @testcase_location = location
+            @testcase_location                                           = location
             @data[root][testsuite][@suite_location][:testcase][location] ||= { attrs: attrs }
           when :failure
             raise 'failure not part of a testcase' unless @testcase_location
-            @data[root][testsuite][@suite_location][:testcase][@testcase_location].merge!( { failure: { attrs: attrs } } )
+            @data[root][testsuite][@suite_location][:testcase][@testcase_location].merge!({ failure: { attrs: attrs } })
             @failure = @data[root][testsuite][@suite_location][:testcase][@testcase_location][:failure]
         end
       end
@@ -52,13 +52,13 @@ module RSpecFlake
       def cdata_block string
         raise 'cdata not associated with failure' unless @failure
         @failure[:content] = string
-        @failure = nil
+        @failure           = nil
       end
 
       def end_element name
         case name
           when 'testsuite'
-             @suite_location = nil
+            @suite_location = nil
           when 'testcase'
             @testcase_location = nil
         end

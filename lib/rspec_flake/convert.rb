@@ -28,14 +28,14 @@ module RSpecFlake
     end
 
     def cdata content
-       "\n<![CDATA[#{content}]]>\n"
+      "\n<![CDATA[#{content}]]>\n"
     end
 
     def xml_out hash
       xml_header = %Q(<?xml version="1.0" encoding="UTF-8"?>\n)
-      xml_body = XmlSimple.xml_out(hash, RootName: 'testsuites')
+      xml_body   = XmlSimple.xml_out(hash, RootName: 'testsuites')
       # xmlsimple will escape the cdata by default
-      xml_body = EscapeUtils.unescape_html xml_body
+      xml_body   = EscapeUtils.unescape_html xml_body
       xml_header + xml_body
     end
   end

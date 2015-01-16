@@ -7,7 +7,7 @@ describe 'parse rspec_junit xml' do
   end
 
   it 'should parse failure results' do
-    actual = RSpecFlake.parse_xml data 'failure.xml'
+    actual   = RSpecFlake.parse_xml data 'failure.xml'
     expected = expected_parsed_failure_xml
 
     expect(actual).to eq expected
