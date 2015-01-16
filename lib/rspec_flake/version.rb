@@ -1,4 +1,4 @@
 module RSpecFlake
-  VERSION = '0.0.1' unless defined? ::RSpecFlake::VERSION
-  DATE    = '2015-01-14' unless defined? ::RSpecFlake::DATE
+  VERSION = '0.0.2' unless defined? ::RSpecFlake::VERSION
+  DATE    = '2015-01-16' unless defined? ::RSpecFlake::DATE
 end
