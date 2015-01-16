@@ -3,6 +3,7 @@ require 'rubygems' # gem requires
 require 'nokogiri'
 require 'xmlsimple'
 require 'posix/spawn' # http://rubygems.org/gems/posix-spawn
+require 'escape_utils'
 
 # ruby requies
 require 'fileutils'

@@ -10,7 +10,12 @@ module RSpecFlake
         suite_with_tests[:testcase] = []
         suite_obj[:testcase].each do |testcase_location, testcase_obj|
           testcase = testcase_obj[:attrs]
-          testcase.merge!(failure: testcase_obj[:failure][:attrs]) if testcase_obj[:failure]
+          if testcase_obj[:failure]
+            fail_content = testcase_obj[:failure][:content]
+            fail_content = "\n<![CDATA[#{fail_content}]]>\n"
+            # content key must be a string for xml simple
+            testcase.merge!(failure: testcase_obj[:failure][:attrs].merge('content' => fail_content))
+          end
           suite_with_tests[:testcase] << testcase
         end
 
@@ -20,7 +25,10 @@ module RSpecFlake
       # ap converted, index: false, indent: 2
 
       xml_header = %Q(<?xml version="1.0" encoding="UTF-8"?>\n)
-      xml_header + XmlSimple.xml_out(converted, RootName: 'testsuites')
+      xml_body = XmlSimple.xml_out(converted, RootName: 'testsuites')
+      # xmlsimple will escape the cdata by default
+      xml_body = EscapeUtils.unescape_html xml_body
+      xml_header + xml_body
     end
   end
 end
