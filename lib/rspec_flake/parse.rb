@@ -18,6 +18,7 @@ module RSpecFlake
         @data           = {}
         @suite_location = nil
         @testcase_location = nil
+        @failure = nil
       end
 
       def result
@@ -44,7 +45,14 @@ module RSpecFlake
           when :failure
             raise 'failure not part of a testcase' unless @testcase_location
             @data[root][testsuite][@suite_location][:testcase][@testcase_location].merge!( { failure: { attrs: attrs } } )
+            @failure = @data[root][testsuite][@suite_location][:testcase][@testcase_location][:failure]
         end
+      end
+
+      def cdata_block string
+        raise 'cdata not associated with failure' unless @failure
+        @failure[:content] = string
+        @failure = nil
       end
 
       def end_element name

@@ -135,10 +135,11 @@ def expected_parsed_failure_xml
                             "location" => "./spec/a_spec.rb:2"
                         },
                         :failure => {
-                            :attrs => {
+                              :attrs => {
                                 "message" => "failed a a 3",
                                    "type" => "failed"
-                            }
+                            },
+                            :content => "\nexpected: 2\n     got: 1\n\n(compared using ==)\n\n[\"./spec/a_spec.rb:4:in `block (2 levels) in <top (required)>'\"]"
                         }
                     }
                 }
