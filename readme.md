@@ -13,7 +13,7 @@ location. After that the hash is rewritten and passed to XmlSimple for
 serilization to xml.
 
 The value of `errors` is hardcoded to 0 in `jarjuf` because rspec records
-failures and errors are considered a type of failure.
+failures. Errors are considered a type of failure.
 
 #### Example output
 
