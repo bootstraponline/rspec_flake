@@ -2,8 +2,10 @@
 # encoding: utf-8
 require File.expand_path '../../lib/rspec_flake', __FILE__
 
-def run_rspec_flake
-  usage_string = <<-'MSG'
+module RSpecFlake
+  class << self
+    def run_rspec_flake
+      usage_string = <<-'MSG'
 rspec_flake [count] [rspec command]
 
 rspec_flake 1 rspec
@@ -11,18 +13,20 @@ rspec_flake 1 rspec
 
 rspec_flake 2 rspec -e "some test"
   Run some test twice
-  MSG
+      MSG
 
-  args = ARGV
+      args = ARGV
 
-  if args && args.length >= 2 && args.first.match(/\d+/)
-    command = args.join(' ')[1..-1].strip
-    RSpecFlake::Runner.run_tests count: args.first, command: command
-    exit
-  else
-    puts usage_string
-    exit
+      if args && args.length >= 2 && args.first.match(/\d+/)
+        command = args.join(' ')[1..-1].strip
+        RSpecFlake::Runner.run_tests count: args.first, command: command
+        exit
+      else
+        puts usage_string
+        exit
+      end
+    end
   end
 end
 
-run_rspec_flake
+RSpecFlake.run_rspec_flake

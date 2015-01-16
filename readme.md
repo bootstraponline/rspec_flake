@@ -14,3 +14,16 @@ serilization to xml.
 
 The value of `errors` is hardcoded to 0 in `jarjuf` because rspec records
 failures and errors are considered a type of failure.
+
+#### Example output
+
+```
+$ rspec_flake 2 rspec
+Running: "rspec" --format JUnit --out "/rspec_simple_example/tmp/0.xml"
+Running: "rspec" --format JUnit --out "/rspec_simple_example/tmp/1.xml"
+a a 1 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:6
+a a 2 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:10
+a a 3 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:13
+b b 3 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:6
+b b 4 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:9
+```
