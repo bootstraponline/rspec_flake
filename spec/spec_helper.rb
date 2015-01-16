@@ -8,6 +8,16 @@ def data data_path
   File.expand_path File.join('..', 'data', data_path), __FILE__
 end
 
+def expected_stats
+  <<'TEXT'
+a a 1 - runs: 3 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:6
+a a 2 - runs: 3 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:10
+b b 3 - runs: 3 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:6
+b b 4 - runs: 3 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:10
+a a 3 - runs: 2 - failures: 2 - avg time: 0.0 - ./spec/a_spec.rb:2
+TEXT
+end
+
 def expected_merge_xml
   <<'XML'
 <?xml version="1.0" encoding="UTF-8"?>

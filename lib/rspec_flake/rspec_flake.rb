@@ -25,7 +25,9 @@ module RSpecFlake
 
       merge_path = File.join(tmp_path, 'merged.xml')
       File.open(merge_path, 'w') do |file|
-        file.write RSpecFlake.merge_xml input: xml_files
+        xml = merge_xml input: xml_files
+        file.write xml
+        puts stats_from_merge_xml xml
       end
     end
   end
