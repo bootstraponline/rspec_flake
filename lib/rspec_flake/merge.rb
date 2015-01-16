@@ -29,9 +29,11 @@ module RSpecFlake
           suite_obj[:testcase].each do |testcase_location, testcase_obj|
             attrs = testcase_obj[:attrs]
             test  = merged[:testsuite][:testcase][testcase_location] ||= { failures: 0, runs: 0, name: attrs['name'], location: attrs['location'], time: [] }
-            # todo: merge failure tags and retain cdata
+
             if testcase_obj[:failure]
               test[:failures] += 1
+              test[:failure] ||= []
+              test[:failure] << { 'content' => cdata(testcase_obj[:failure][:content]) }
             end
             test[:runs] += 1
             test[:time] << attrs['time']

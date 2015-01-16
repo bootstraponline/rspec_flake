@@ -12,7 +12,7 @@ module RSpecFlake
           testcase = testcase_obj[:attrs]
           if testcase_obj[:failure]
             fail_content = testcase_obj[:failure][:content]
-            fail_content = "\n<![CDATA[#{fail_content}]]>\n"
+            fail_content = cdata fail_content
             # content key must be a string for xml simple
             testcase.merge!(failure: testcase_obj[:failure][:attrs].merge('content' => fail_content))
           end
@@ -25,6 +25,10 @@ module RSpecFlake
       # ap converted, index: false, indent: 2
 
       xml_out converted
+    end
+
+    def cdata content
+       "\n<![CDATA[#{content}]]>\n"
     end
 
     def xml_out hash

@@ -33,8 +33,27 @@ def expected_merge_xml
       <time>0.000148</time>
       <time>0.000173</time>
     </testcase>
-    <testcase failures="1" runs="1" name="a a 3" location="./spec/a_spec.rb:2">
+    <testcase failures="2" runs="2" name="a a 3" location="./spec/a_spec.rb:2">
       <time>0.001008</time>
+      <time>0.001008</time>
+      <failure>
+<![CDATA[
+expected: 2
+     got: 1
+
+(compared using ==)
+
+["./spec/a_spec.rb:4:in `block (2 levels) in <top (required)>'"]]]>
+</failure>
+      <failure>
+<![CDATA[
+expected: 2
+     got: 1
+
+(compared using ==)
+
+["./spec/a_spec.rb:4:in `block (2 levels) in <top (required)>'"]]]>
+</failure>
     </testcase>
   </testsuite>
 </testsuites>
