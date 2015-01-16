@@ -27,14 +27,14 @@ module RSpecFlake
 
         parsed[:testsuites][:testsuite].each do |suite_location, suite_obj|
           suite_obj[:testcase].each do |testcase_location, testcase_obj|
-            test_attrs                                       = testcase_obj[:attrs]
-            merged[:testsuite][:testcase][testcase_location] ||= { failures: 0, runs: 0, name: test_attrs['name'], location: test_attrs['location'], time: [] }
+            attrs = testcase_obj[:attrs]
+            test  = merged[:testsuite][:testcase][testcase_location] ||= { failures: 0, runs: 0, name: attrs['name'], location: attrs['location'], time: [] }
             # todo: merge failure tags and retain cdata
             if testcase_obj[:failure]
-              merged[:testsuite][:testcase][testcase_location][:failures] += 1
+              test[:failures] += 1
             end
-            merged[:testsuite][:testcase][testcase_location][:runs] += 1
-            merged[:testsuite][:testcase][testcase_location][:time] << test_attrs['time']
+            test[:runs] += 1
+            test[:time] << attrs['time']
           end
         end
       end
