@@ -17,6 +17,7 @@ module RSpecFlake
       def reset
         @data           = {}
         @suite_location = nil
+        @testcase_location = nil
       end
 
       def result
@@ -38,12 +39,21 @@ module RSpecFlake
             @data[root][testsuite][@suite_location] ||= { attrs: attrs, testcase: {} }
           when :testcase
             raise 'testcase not part of a suite' unless @suite_location
+            @testcase_location = location
             @data[root][testsuite][@suite_location][:testcase][location] ||= { attrs: attrs }
+          when :failure
+            raise 'failure not part of a testcase' unless @testcase_location
+            @data[root][testsuite][@suite_location][:testcase][@testcase_location].merge!( { failure: { attrs: attrs } } )
         end
       end
 
       def end_element name
-        @suite_location = nil if name == 'testsuite'
+        case name
+          when 'testsuite'
+             @suite_location = nil
+          when 'testcase'
+            @testcase_location = nil
+        end
       end
     end
 

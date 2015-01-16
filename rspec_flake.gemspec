@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry', '~> 0.10.1'
   s.add_development_dependency 'awesome_print', '~> 1.6.1'
   s.add_development_dependency 'rspec', '~> 3.1.0'
-  s.add_development_dependency 'rake', '~> 10.4.2' # make travis happy
+  s.add_development_dependency 'nokogiri-diff', '~> 0.2.0'
 
   s.executables = %w(rspec_flake)
   s.files = `git ls-files`.split "\n"

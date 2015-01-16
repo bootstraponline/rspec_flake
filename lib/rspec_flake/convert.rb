@@ -9,7 +9,9 @@ module RSpecFlake
         suite_with_tests            = suite_obj[:attrs]
         suite_with_tests[:testcase] = []
         suite_obj[:testcase].each do |testcase_location, testcase_obj|
-          suite_with_tests[:testcase] << testcase_obj[:attrs]
+          testcase = testcase_obj[:attrs]
+          testcase.merge!(failure: testcase_obj[:failure][:attrs]) if testcase_obj[:failure]
+          suite_with_tests[:testcase] << testcase
         end
 
         converted[:testsuite] << suite_with_tests

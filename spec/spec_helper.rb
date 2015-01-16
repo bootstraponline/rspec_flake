@@ -24,6 +24,19 @@ def expected_converted_0_xml
 XML
 end
 
+def expected_converted_failure_xml
+  <<'XML'
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites errors="0" failures="1" skipped="0" tests="1" time="0.001672" timestamp="2015-01-16T10:14:25-05:00">
+  <testsuite location="./spec/a_spec.rb:1" name="a" tests="1" errors="0" failures="1" skipped="0">
+    <testcase name="a a 3" time="0.001008" location="./spec/a_spec.rb:2">
+      <failure message="failed a a 3" type="failed" />
+    </testcase>
+  </testsuite>
+</testsuites>
+XML
+end
+
 def expected_parsed_0_xml
   {
     :testsuites => {
@@ -91,4 +104,46 @@ def expected_parsed_0_xml
       }
     }
   }
+end
+
+def expected_parsed_failure_xml
+{
+    :testsuites => {
+            :attrs => {
+               "errors" => "0",
+             "failures" => "1",
+              "skipped" => "0",
+                "tests" => "1",
+                 "time" => "0.001672",
+            "timestamp" => "2015-01-16T10:14:25-05:00"
+        },
+        :testsuite => {
+            "./spec/a_spec.rb:1" => {
+                   :attrs => {
+                    "location" => "./spec/a_spec.rb:1",
+                        "name" => "a",
+                       "tests" => "1",
+                      "errors" => "0",
+                    "failures" => "1",
+                     "skipped" => "0"
+                },
+                :testcase => {
+                    "./spec/a_spec.rb:2" => {
+                          :attrs => {
+                                "name" => "a a 3",
+                                "time" => "0.001008",
+                            "location" => "./spec/a_spec.rb:2"
+                        },
+                        :failure => {
+                            :attrs => {
+                                "message" => "failed a a 3",
+                                   "type" => "failed"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 end
