@@ -13,11 +13,19 @@ module RSpecFlake
       FileUtils.rm_rf tmp_path
       FileUtils.mkdir_p tmp_path
 
+      xml_files = []
+
       count.times do |iteration|
-        out_file = File.join(tmp_path, iteration.to_s + '.xml')
+        out_file = File.expand_path File.join(tmp_path, iteration.to_s + '.xml')
+        xml_files << out_file
         spawn_command = %Q("#{command}" --format JUnit --out "#{out_file}")
         puts "Running: #{spawn_command}"
         Process::waitpid(POSIX::Spawn::spawn(spawn_command))
+      end
+
+      merge_path = File.join(tmp_path, 'merged.xml')
+      File.open(merge_path, 'w') do |file|
+        file.write  RSpecFlake.merge_xml input: xml_files
       end
     end
   end
