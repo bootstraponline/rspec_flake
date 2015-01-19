@@ -3,6 +3,8 @@ module RSpecFlake
 
     # Read in JUnit xml files and output an xml report
     # that lists the time spent per file
+    #
+    # @example puts RSpecFlake.file_time files: Dir.glob("*.xml")
     def file_time opts={}
       files = opts[:files]
       files = [files] unless files.is_a?(Array)
@@ -19,7 +21,7 @@ module RSpecFlake
 
       output = ''
       file_times.each do |file, time|
-        output += "#{file}\t #{ChronicDuration.output(time) || 0}"
+        output += "#{file}\t #{ChronicDuration.output(time) || 0}\n"
       end
 
       output
