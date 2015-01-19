@@ -18,7 +18,7 @@ module RSpecFlake
       count.times do |iteration|
         out_file = File.expand_path File.join(tmp_path, iteration.to_s + '.xml')
         xml_files << out_file
-        spawn_command = %Q("#{command}" --format JUnit --out "#{out_file}")
+        spawn_command = %Q(#{command} --format JUnit --out "#{out_file}")
         puts "Running: #{spawn_command}"
         Process::waitpid(POSIX::Spawn::spawn(spawn_command))
       end
