@@ -27,3 +27,8 @@ a a 3 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/a_spec.rb:13
 b b 3 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:6
 b b 4 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:9
 ```
+
+#### Google Sheets Note
+
+The file time output is tab delimited and can be posted directly into
+a Google Sheets document using Command/Control + Shift + V.

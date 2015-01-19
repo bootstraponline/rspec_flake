@@ -19,9 +19,11 @@ module RSpecFlake
 
       file_times = file_times.sort_by { |file, time| time }.reverse
 
+      # Paste into Google Sheets with Ctrl/Command + Shift + V
       output = ''
       file_times.each do |file, time|
-        output += "#{file}\t #{ChronicDuration.output(time) || 0}\n"
+        time = ChronicDuration.output(time) || '0'
+        output += "#{time.ljust(12)}\t#{file}\n"
       end
 
       output
