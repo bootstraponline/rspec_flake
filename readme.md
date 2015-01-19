@@ -1,4 +1,4 @@
-#### rspec_flake [![Build Status](https://travis-ci.org/bootstraponline/rspec_flake.svg?branch=master)](https://travis-ci.org/bootstraponline/rspec_flake)
+#### rspec_flake [![Gem Version](https://badge.fury.io/rb/rspec_flake.svg)](http://badge.fury.io/rb/rspec_flake)[![Build Status](https://travis-ci.org/bootstraponline/rspec_flake.svg?branch=master)](https://travis-ci.org/bootstraponline/rspec_flake)
 
 Measure RSpec test flakiness
 
