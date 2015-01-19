@@ -69,6 +69,7 @@ module RSpecFlake
       File.read(path).encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     end
 
+    # Parse JUnit xml into a Hash keyed on location
     def parse_xml xml_path
       xml = read_as_utf8 xml_path
 

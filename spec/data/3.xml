@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites errors="0" failures="0" skipped="0" tests="4" time="0.001283"
+            timestamp="2015-01-15T10:25:40-05:00">
+  <testsuite location="./spec/a_spec.rb:1" name="a" tests="2" errors="0"
+             failures="0" skipped="0">
+    <properties/>
+    <testcase name="merge 0" time="0.000177" location="./spec/a_spec.rb:6">
+    </testcase>
+    <testcase name="merge 1" time="0.000198" location="./spec/a_spec.rb:10">
+    </testcase>
+  </testsuite>
+</testsuites>

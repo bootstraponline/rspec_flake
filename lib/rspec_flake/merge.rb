@@ -1,6 +1,21 @@
 module RSpecFlake
   class << self
 
+    # Merges individual xml reports (from parallel_rspec)
+    # into a single combined xml file
+    #
+    # @example:
+    #    merge_individual_xml files: Dir.glob('tmp/*.xml')
+    def merge_individual_xml opts={}
+      files = opts[:files]
+      files = [files] unless files.is_a?(Array)
+
+      files_hash = {}
+      files.each { |file| files_hash.merge!(RSpecFlake.parse_xml(file)[:testsuites][:testsuite]) }
+
+      RSpecFlake.hash_to_xml({ testsuites: { testsuite: files_hash } })
+    end
+
     # merge input xml files into a hash
     #
     # input - single path or array of paths to input xml files

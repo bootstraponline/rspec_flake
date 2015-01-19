@@ -6,4 +6,12 @@ describe 'merge rspec_junit xml' do
 
     expect(actual).to eq expected
   end
+
+  it 'should merge individual xml files' do
+    xml_files = %w[3.xml 4.xml]
+    actual    = RSpecFlake.merge_individual_xml files: xml_files.map(&method(:data))
+    expected  = expected_merge_individual_xml
+
+    expect(actual).to eq(expected)
+  end
 end
