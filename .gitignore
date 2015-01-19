@@ -2,3 +2,5 @@
 *.lock
 .DS*
 .idea/
+merged.xml
+junit.xml

@@ -28,6 +28,16 @@ b b 3 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:6
 b b 4 - runs: 2 - failures: 0 - avg time: 0.0 - ./spec/b_spec.rb:9
 ```
 
+#### Parallel
+
+When running [tests in parallel](https://github.com/grosser/parallel_tests),
+the output can be [saved by env number](http://elementalselenium.com/tips/57-junit-xml).
+
+In addition to `.rspec` options file, flags such as `--format documentation`
+can be passed directly to rspec_flake.
+
+`--out junit/xml_<%= ENV['TEST_ENV_NUMBER'] %>.xml`
+
 #### Google Sheets Note
 
 The file time output is tab delimited and can be posted directly into
