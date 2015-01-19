@@ -18,8 +18,9 @@ rspec_flake 2 rspec -e "some test"
       args = ARGV
 
       if args && args.length >= 2 && args.first.match(/\d+/)
-        command = args.join(' ')[1..-1].strip
-        RSpecFlake::Runner.run_tests count: args.first, command: command
+        count = args.shift
+        command = args.join(' ').strip
+        RSpecFlake::Runner.run_tests count: count, command: command
         exit
       else
         puts usage_string
