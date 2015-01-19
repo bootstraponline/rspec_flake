@@ -23,7 +23,7 @@ module RSpecFlake
         Process::waitpid(POSIX::Spawn::spawn(spawn_command))
       end
 
-      merge_path = File.join(tmp_path, 'merged.xml')
+      merge_path = File.join(tmp_path, '..', 'merged.xml')
       File.open(merge_path, 'w') do |file|
         xml = RSpecFlake.merge_xml input: xml_files
         file.write xml
