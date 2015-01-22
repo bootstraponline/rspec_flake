@@ -7,7 +7,7 @@ module RSpecFlake
       count = count.to_i
 
       command = opts[:command]
-      raise "command is required and must start with rspec. #{command}" unless command && command.start_with?('rspec')
+      raise "command is required and must start with rspec. #{command}" unless command && command.include?('rspec')
 
       tmp_path = File.expand_path File.join Dir.pwd, 'tmp'
       FileUtils.rm_rf tmp_path
