@@ -1,5 +1,5 @@
 describe 'stats' do
-  it 'should generate stats from merge xml ' do
+  it 'generates stats from merge xml ' do
     actual = RSpecFlake.stats_from_merge_xml expected_merge_xml
     expected  = expected_stats
 
