@@ -1,6 +1,7 @@
 require_relative '../lib/rspec_flake'
 require 'awesome_print'
 require 'pry'
+require 'yarjuf'
 
 Pry.config.command_prefix = "%" if defined?(Pry)
 

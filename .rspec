@@ -1,4 +1,3 @@
---require yarjuf
 --require spec_helper
 --format documentation
 --format JUnit

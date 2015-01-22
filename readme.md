@@ -43,3 +43,7 @@ can be passed directly to rspec_flake.
 
 The file time output is tab delimited and can be posted directly into
 a Google Sheets document using Command/Control + Shift + V.
+
+#### Run tests
+
+- `thor spec`

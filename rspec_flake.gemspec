@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'awesome_print', '~> 1.6.1'
   s.add_development_dependency 'rspec', '~> 3.1.0'
   s.add_development_dependency 'nokogiri-diff', '~> 0.2.0'
+  s.add_development_dependency 'rspec_junit', '~> 2.0.0'
 
   s.executables = %w(rspec_flake)
   s.files       = `git ls-files`.split "\n"
