@@ -1,3 +1,23 @@
+#### v0.2.3 2015-06-19
+
+- [4e54fd0](https://github.com/appium/rspec_flake/commit/4e54fd0815191d2dc0b1ea64a11b031907297eff) Release 0.2.3
+- [926424a](https://github.com/appium/rspec_flake/commit/926424adc1ab006893970d4663ac68c0b516419e) Fix Thorfile
+- [d17c0ec](https://github.com/appium/rspec_flake/commit/d17c0ec7bc3a3d5a9f12609a6216c4908e6af94f) Test RSpecFlake::Runner.run_tests
+- [7f07dde](https://github.com/appium/rspec_flake/commit/7f07dde4d10741920248ce0c34fc08485544e8cc) Cache bundler
+- [e738900](https://github.com/appium/rspec_flake/commit/e738900656ec329a0bfe52e5bc18683372e808af) Setup coveralls and gemnasium
+- [f355696](https://github.com/appium/rspec_flake/commit/f3556966b1274147ec7ddf48b6c88ed465b27fe5) Update readme.md
+- [3d01968](https://github.com/appium/rspec_flake/commit/3d01968c16e275a4d258c3acb8246f056438ba3c) Create .rspec_parallel
+- [5224921](https://github.com/appium/rspec_flake/commit/522492199894e029bb2a8d68b774bea5844326f3) Support parallel_rspec
+- [3ab091e](https://github.com/appium/rspec_flake/commit/3ab091ee8ca45c31614693a7035346db0f01d688) Update specs
+- [ff493b1](https://github.com/appium/rspec_flake/commit/ff493b15d231f9437f93225bd641bee21368b235) Fix specs
+- [7c1d528](https://github.com/appium/rspec_flake/commit/7c1d528b0d1bbacd9e70c4828ac051f6328131ec) Clarify docs
+- [b596cd0](https://github.com/appium/rspec_flake/commit/b596cd0a342a614a9d4c130050146494be138d2f) Fix specs and update docs
+- [3990e6e](https://github.com/appium/rspec_flake/commit/3990e6e52c1ade662fa27f7ad6440d711ea79466) Fix specs
+- [9416a70](https://github.com/appium/rspec_flake/commit/9416a7036e77b04748f465fcd94a2040d3f9fe1d) Update file time output
+- [8ffa7ab](https://github.com/appium/rspec_flake/commit/8ffa7ab7e0fbf2fefda2f9b95c1bc758db5346db) Add file time calculation
+- [78e2623](https://github.com/appium/rspec_flake/commit/78e2623baf6f4033664c583b932cf184d9f7eb57) Add general merge method
+
+
 #### v0.2.2 2015-01-19
 
 - [91c768f](https://github.com/appium/rspec_flake/commit/91c768f69af0bc4d7fe7bbd085c00c6e80dd5c7d) Release 0.2.2
