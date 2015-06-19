@@ -4,3 +4,5 @@
 .idea/
 merged.xml
 junit.xml
+tmp/
+coverage/

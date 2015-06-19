@@ -1,7 +1,7 @@
 require 'rubygems'
 
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear! unless ENV['SKIP_COVERALLS']
 
 require_relative '../lib/rspec_flake'
 require 'awesome_print'

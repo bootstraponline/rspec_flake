@@ -2,8 +2,10 @@
 module RSpecFlake
   class Runner
     def self.run_tests opts={}
+      io = opts.fetch(:io, $stdout)
+
       count = opts[:count]
-      raise 'count is required and must be a number' unless count && count.match(/\d+/)
+      raise 'count is required and must be a number' unless count && count.to_s.match(/\d+/)
       count = count.to_i
 
       command = opts[:command]
@@ -19,7 +21,7 @@ module RSpecFlake
         out_file = File.expand_path File.join(tmp_path, iteration.to_s + '.xml')
         xml_files << out_file
         spawn_command = %Q(#{command} --format JUnit --out "#{out_file}")
-        puts "Running: #{spawn_command}"
+        io.puts "Running: #{spawn_command}"
         Process::waitpid(POSIX::Spawn::spawn(spawn_command))
       end
 
@@ -27,7 +29,7 @@ module RSpecFlake
       File.open(merge_path, 'w') do |file|
         xml = RSpecFlake.merge_xml input: xml_files
         file.write xml
-        puts RSpecFlake.stats_from_merge_xml xml
+        io.puts RSpecFlake.stats_from_merge_xml xml
       end
     end
   end
