@@ -1,4 +1,8 @@
-#### rspec_flake [![Gem Version](https://badge.fury.io/rb/rspec_flake.svg)](http://badge.fury.io/rb/rspec_flake)[![Build Status](https://travis-ci.org/bootstraponline/rspec_flake.svg?branch=master)](https://travis-ci.org/bootstraponline/rspec_flake)
+#### rspec_flake
+[![Gem Version](https://badge.fury.io/rb/rspec_flake.svg)](http://badge.fury.io/rb/rspec_flake)
+[![Dependency Status](https://gemnasium.com/bootstraponline/rspec_flake.svg?nocache)](https://gemnasium.com/bootstraponline/rspec_flake)
+[![Build Status](https://travis-ci.org/bootstraponline/rspec_flake.svg?branch=master)](https://travis-ci.org/bootstraponline/rspec_flake/builds)
+[![Coverage Status](https://coveralls.io/repos/bootstraponline/rspec_flake/badge.svg?nocache)](https://coveralls.io/r/bootstraponline/rspec_flake)
 
 Measure RSpec test flakiness and performance
 

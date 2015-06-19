@@ -1,3 +1,8 @@
+require 'rubygems'
+
+require 'coveralls'
+Coveralls.wear!
+
 require_relative '../lib/rspec_flake'
 require 'awesome_print'
 require 'pry'
